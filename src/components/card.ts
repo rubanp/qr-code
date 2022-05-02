@@ -14,10 +14,9 @@ class Card extends HTMLElement {
     this.#description = this.getAttribute('data-description') as string;
     this.#title = this.getAttribute('data-title') as string;
     const shadow = this.shadowRoot as ShadowRoot;
-    const component = document.createElement('div') as HTMLDivElement;
-    component.innerHTML = `
     <style>
         .container {
+    shadow.innerHTML = `
             background-color: var(--white);
             border-radius: 20px;
             padding: 1.25em;
@@ -58,7 +57,6 @@ class Card extends HTMLElement {
         </div>
     </div>
     `;
-    shadow.appendChild(component);
     shadow.prepend(minireset);
   }
 }
