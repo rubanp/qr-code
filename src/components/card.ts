@@ -8,6 +8,7 @@ class Card extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
+    this.style.width = '360px';
   }
 
   connectedCallback() {
