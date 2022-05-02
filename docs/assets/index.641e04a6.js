@@ -34,7 +34,7 @@ const d=function(){const o=document.createElement("link").relList;if(o&&o.suppor
         }
     </style>
     <div class="container">
-        <img src="../static/qr-code.png" alt="QR Code">
+        <img src="./static/qr-code.png" alt="QR Code">
         <div class="caption">
             <h1>Improve your front-end skills by building projects</h1>
             <p>Scan the QR code to visit Frontend
