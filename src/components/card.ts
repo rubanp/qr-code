@@ -14,9 +14,9 @@ class Card extends HTMLElement {
     this.#description = this.getAttribute('data-description') as string;
     this.#title = this.getAttribute('data-title') as string;
     const shadow = this.shadowRoot as ShadowRoot;
-    <style>
-        .container {
     shadow.innerHTML = `
+    <style id='css-main'>
+        #container {
             background-color: var(--white);
             border-radius: 20px;
             padding: 1.25em;
@@ -27,7 +27,7 @@ class Card extends HTMLElement {
             text-align: center;
             box-shadow: 0px 0px 5px 4px rgba(150,150,150,0.2);
         }
-        .caption {
+        #caption {
             padding: 1.25em;
         }
         img {
@@ -49,9 +49,9 @@ class Card extends HTMLElement {
             color: grey;
         }
     </style>
-    <div class="container">
+    <div id="container">
         <img src="./static/qr-code.png" alt="QR Code">
-        <div class="caption">
+        <div id="caption">
             <h1>${this.#title}</h1>
             <p>${this.#description}</p>
         </div>
