@@ -1,10 +1,19 @@
 import minireset from '../scripts/minireset';
 
 class Card extends HTMLElement {
+  #title: string = '';
+
+  #description: string = '';
+
   constructor() {
     super();
-    const shadow = this.attachShadow({ mode: 'open' });
-    shadow.appendChild(minireset);
+    this.attachShadow({ mode: 'open' });
+  }
+
+  connectedCallback() {
+    this.#description = this.getAttribute('data-description') as string;
+    this.#title = this.getAttribute('data-title') as string;
+    const shadow = this.shadowRoot as ShadowRoot;
     const component = document.createElement('div') as HTMLDivElement;
     component.innerHTML = `
     <style>
@@ -44,14 +53,13 @@ class Card extends HTMLElement {
     <div class="container">
         <img src="./static/qr-code.png" alt="QR Code">
         <div class="caption">
-            <h1>Improve your front-end skills by building projects</h1>
-            <p>Scan the QR code to visit Frontend
-            Mentor and take your coding skills to
-            the next level</p>
+            <h1>${this.#title}</h1>
+            <p>${this.#description}</p>
         </div>
     </div>
     `;
     shadow.appendChild(component);
+    shadow.prepend(minireset);
   }
 }
 export default Card;
