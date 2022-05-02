@@ -4,7 +4,7 @@
     "version": "0.0.0",
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build --emptyOutDir && cp -r ./src/static ./docs"
     },
     "devDependencies": {
         "@types/express": "^4.17.13",
