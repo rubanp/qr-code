@@ -5,6 +5,8 @@ class Card extends HTMLElement {
 
   #description: string = '';
 
+  #imgSource: string = '';
+
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
@@ -14,6 +16,7 @@ class Card extends HTMLElement {
   connectedCallback() {
     this.#description = this.getAttribute('data-description') as string;
     this.#title = this.getAttribute('data-title') as string;
+    this.#imgSource = this.getAttribute('data-img-src') as string;
     const shadow = this.shadowRoot as ShadowRoot;
     shadow.innerHTML = `
     <style id='css-main'>
@@ -51,7 +54,7 @@ class Card extends HTMLElement {
         }
     </style>
     <div id="container">
-        <img src="./static/qr-code.png" alt="QR Code">
+        <img src="${this.#imgSource}" alt="QR Code to https://www.frontendmentor.io/">
         <div id="caption">
             <h1>${this.#title}</h1>
             <p>${this.#description}</p>
