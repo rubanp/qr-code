@@ -9,7 +9,7 @@ var p=(e,t,i)=>{if(!t.has(e))throw TypeError("Cannot "+i)};var c=(e,t,i)=>(p(e,t
             justify-content: center;
             align-items: center;
             text-align: center;
-            box-shadow: 0px 0px 10px 10px rgba(190,190,190,0.2);
+            box-shadow: 0px 25px 50px -12px rgba(0,0,0,0.25);
         }
         #caption {
             padding: 1.25em;
