@@ -13,23 +13,25 @@
     />
     <link
       rel="stylesheet"
-      href="./styles/main.css"
+      href="./main.css"
     />
-    <script
-      type="module"
-      defer
-      src="./scripts/main.ts"
-    ></script>
     <title>Project Template</title>
   </head>
 
   <body>
-    <x-card
-      role="main"
-      data-title="Improve your front-end skills by building projects"
-      data-description="Scan the QR code to visit Frontend Mentor and take your coding skills to the next level"
-      data-img-src="./static/qr-code.png"
-    >
-    </x-card>
+    <main id="container">
+      <img
+        src="./static/qr-code.png"
+        alt="QR Code to 
+        https://www.frontendmentor.io/"
+      />
+      <section id="caption">
+        <h1>Improve your front-end skills by building projects</h1>
+        <p>
+          Scan the QR code to visit Frontend Mentor and take your coding skills
+          to the next level
+        </p>
+      </section>
+    </main>
   </body>
 </html>
